@@ -16,6 +16,7 @@ namespace AspNetPractice12.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            Console.Clear();
             return View(_products.GetAllProducts());
         }
         [HttpPost]
