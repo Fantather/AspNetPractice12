@@ -25,5 +25,19 @@ namespace AspNetPractice12.Controllers
             _products.AddProduct(product);
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public IActionResult UpdateProduct(int id)
+        {
+            return View(_products.GetProduct(id));
+        }
+        [HttpPost]
+        public IActionResult UpdateProduct(Product product)
+        {
+            _products.UpdateProduct(product);
+            return RedirectToAction(nameof(Index));
+        }
+
+        
     }
 }

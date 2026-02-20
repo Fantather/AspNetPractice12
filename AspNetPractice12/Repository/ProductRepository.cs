@@ -23,5 +23,19 @@ namespace AspNetPractice12.Repository
         {
             return _context.Products;
         }
+
+        public Product GetProduct(int id)
+        {
+            return _context.Products.Find(id);
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            Product product2 = GetProduct(product.Id);
+            product2.Name = product.Name;
+            product2.Category = product.Category;
+            product2.RetailPrice = product.RetailPrice;
+            product2.PurchasePrice = product.PurchasePrice;
+        }
     }
 }
